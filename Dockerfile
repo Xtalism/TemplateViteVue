@@ -4,5 +4,3 @@ COPY package*.json ./
 RUN npm config set --global strict-ssl false
 RUN npm install
 COPY . .
-
-EXPOSE 5173
