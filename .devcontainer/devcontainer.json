@@ -3,7 +3,7 @@
   "workspaceFolder": "/app",
   "build": {
     "context": "..",
-    "dockerfile": "../Dockerfile"
+    "dockerfile": "Dockerfile"
   },
   "mounts": [
     "source=TemplateViteVue-DevData,target=/app,type=volume"
