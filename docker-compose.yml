@@ -1,8 +1,0 @@
-version: '3.8'
-services:
-  dev:
-    build: .
-    volumes:
-      - dev-data:/app
-volumes:
-  dev-data:

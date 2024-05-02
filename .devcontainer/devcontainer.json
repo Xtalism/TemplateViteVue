@@ -1,11 +1,13 @@
 {
   "name": "Existing Docker Compose (Extend)",
-  "dockerComposeFile": [
-    "../docker-compose.yml",
-    "docker-compose.yml"
-  ],
-  "service": "dev",
   "workspaceFolder": "/app",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+  "mounts": [
+    "source=TemplateViteVue-DevData,target=/app,type=volume"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
