@@ -6,15 +6,10 @@
     "dockerfile": "../Dockerfile",
     "target": "development"
   },
-  "mounts": [
-    "source=TemplateViteVue-DevData,target=/app,type=volume"
-  ],
+  "mounts": ["source=TemplateViteVue-DevData,target=/app,type=volume"],
   "customizations": {
     "vscode": {
-      "extensions": [
-        "eamodio.gitlens",
-        "Vue.volar"
-      ]
+      "extensions": ["eamodio.gitlens", "Vue.volar"]
     }
   }
 }
