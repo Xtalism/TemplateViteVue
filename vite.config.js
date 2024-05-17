@@ -16,7 +16,14 @@ export default defineConfig({
     zipPack({
       outDir: buildDirectory,
       outFileName: zipFileName,
-      done: () => {
+      done: (error) => {
+        if (error) {
+          console.error(
+            'Error creating ZIP file, skipping deletion of build files'
+          )
+          return
+        }
+
         deleteFilesWithExclusion(buildDirectory, zipFileName)
       }
     })
