@@ -14,7 +14,9 @@ export const deleteFilesWithExclusion = async (
   exclusionItem
 ) => {
   try {
-    const directoryContents = await fs.readdir(directoryPath)
+    const directoryContents = (await fs.readdir(directoryPath)).filter(
+      (item) => item !== exclusionItem
+    )
     console.log(`All directories and files listed: ${directoryContents}`)
 
     for (const item of directoryContents) {
@@ -28,10 +30,8 @@ export const deleteFilesWithExclusion = async (
         continue
       }
 
-      if (item != exclusionItem) {
-        console.log(`Deleting file: ${itemPath}`)
-        fs.rm(itemPath)
-      }
+      console.log(`Deleting file: ${itemPath}`)
+      fs.rm(itemPath)
     }
   } catch (error) {
     console.error(`Error deleting files in directory ${directoryPath}:`, error)
