@@ -41,7 +41,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@utils': path.resolve('src/utils')
+      '@utils': path.resolve('src/utils'),
+      '@pages': path.resolve('src/pages'),
+      '@components': path.resolve('src/components')
     }
   }
 })
