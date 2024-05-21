@@ -43,7 +43,8 @@ export default defineConfig({
     alias: {
       '@utils': path.resolve('src/utils'),
       '@pages': path.resolve('src/pages'),
-      '@components': path.resolve('src/components')
+      '@components': path.resolve('src/components'),
+      '@router': path.resolve('src/router')
     }
   }
 })
