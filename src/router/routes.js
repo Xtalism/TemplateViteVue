@@ -3,7 +3,7 @@ export default [
     path: '/login',
     name: 'Login',
     component: () => import('@pages/LoginPage.vue'),
-    meta: { requiresAuthentication: false }
+    meta: { requiresAuthentication: false, restrictIfAuthenticated: true }
   },
   {
     path: '/',
@@ -25,10 +25,11 @@ export default [
     name: 'About',
     component: () => import('@pages/AboutPage.vue'),
     meta: { requiresAuthentication: false }
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: () => import('@pages/NotFoundPage.vue'),
+    meta: { hideInNav: true }
   }
-  // {
-  //   path: '/:catchAll(.*)',
-  //   name: 'NotFound',
-  //   component: () => import('@pages/NotFoundPage.vue')
-  // }
 ]
