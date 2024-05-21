@@ -23,12 +23,31 @@ const router = createRouter({
       path: '/home',
       name: 'Home',
       component: () => import('@pages/HomePage.vue')
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('@pages/AboutPage.vue'),
+      meta: { requiresAuthentication: false }
     }
+    // {
+    //   path: '/:catchAll(.*)',
+    //   name: 'NotFound',
+    //   component: () => import('@pages/NotFoundPage.vue')
+    // }
   ]
 })
 
 router.beforeEach((to, from, next) => {
   console.log(`Navigating to: ${to.name}`)
+
+  // TODO: Check user authorization
+  const isAuthenticated = true
+  if (to.name === 'Login' && isAuthenticated) {
+    console.log(`User is authenticated, redirecting to Home page.`)
+
+    return next({ name: 'Home' })
+  }
 
   const requiresAuthentication =
     to.meta.requiresAuthentication !== undefined
@@ -36,20 +55,30 @@ router.beforeEach((to, from, next) => {
       : true
 
   if (!requiresAuthentication) {
+    console.log(
+      `Page does not require authentication, allowing access to ${to.name}`
+    )
+
     return next()
   }
 
-  const isAuthenticated = true // modify for the authentication process
-
-  if (!isAuthenticated) {
+  if (!isAuthenticated && to.name !== 'Login') {
     console.log('User not authenticated, sending to Login page')
 
-    return next({ name: 'login' })
+    return next({ name: 'Login' })
   }
 
   // TODO: Check user authorization
+  // const isAuthorized = false
 
-  console.log('User does not have authorization to access this page.')
+  // if (!isAuthorized) {
+  //   console.log('User does not have authorization to access this page.')
+
+  //   return next({ name: 'Home' })
+  // }
+
+  console.log(`User is authenticated, allowing access to ${to.name}`)
+  next()
 })
 
 export default router
