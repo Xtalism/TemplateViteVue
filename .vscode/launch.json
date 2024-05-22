@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug dev",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**",
+        "${workspaceFolder}/@vite/**",
+        "${workspaceFolder}/@id/**",
+        "**/hook-exec.js",
+        "**/detector.js"
+      ],
+      "sourceMaps": true,
+      "trace": true,
+      "smartStep": true,
+      "preLaunchTask": "Run dev"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug prod",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**",
+        "${workspaceFolder}/@vite/**",
+        "${workspaceFolder}/@id/**",
+        "**/hook-exec.js",
+        "**/detector.js"
+      ],
+      "sourceMaps": true,
+      "trace": true,
+      "smartStep": true,
+      "preLaunchTask": "Run prod"
+    }
+  ]
+}

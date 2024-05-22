@@ -36,9 +36,6 @@ export default defineConfig({
         }
       })
   ].filter(Boolean),
-  server: {
-    open: true
-  },
   resolve: {
     alias: {
       '@utils': path.resolve('src/utils'),

@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "prod": "vite --mode production",
+    "dev": "vite --open",
+    "devDebug": "vite",
+    "prod": "vite --mode production --open",
+    "prodDebug": "vite --mode production",
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write . && eslint --fix ."
