@@ -9,7 +9,7 @@
       "isBackground": true
     },
     {
-      "label": "Run dev",
+      "label": "Run prod",
       "type": "npm",
       "script": "prodDebug",
       "problemMatcher": [],
