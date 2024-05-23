@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "devDebug": "vite",
+    "devDebug": "vite --port 5173",
     "prod": "vite --mode production --open",
     "prodDebug": "vite --mode production --port 5174",
     "build": "vite build",
