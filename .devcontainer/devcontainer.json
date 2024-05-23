@@ -1,5 +1,5 @@
 {
-  "name": "Existing Docker Compose (Extend)",
+  "name": "TemplateViteVue",
   "workspaceFolder": "/app",
   "build": {
     "context": "..",

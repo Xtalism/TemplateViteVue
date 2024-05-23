@@ -17,15 +17,15 @@
       "problemMatcher": [
         {
           "pattern": {
-            "regexp": ".",
+            "regexp": "."
           },
           "background": {
             "activeOnStart": true,
             "beginsPattern": "> .*",
-            "endsPattern": "enter to show help",
+            "endsPattern": "enter to show help"
           }
         }
-      ],
+      ]
     },
     {
       "label": "Run prod",
@@ -43,12 +43,12 @@
       "problemMatcher": [
         {
           "pattern": {
-            "regexp": ".",
+            "regexp": "."
           },
           "background": {
             "activeOnStart": true,
             "beginsPattern": "> .*",
-            "endsPattern": "enter to show help",
+            "endsPattern": "enter to show help"
           }
         }
       ]
