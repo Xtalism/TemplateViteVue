@@ -5,7 +5,7 @@ ARG DEBIAN_VERSION=bookworm
 
 FROM node:${NODE_VERSION}-${DEBIAN_VERSION} AS development
 WORKDIR /app
-COPY package*.json ./
+COPY package*.json .
 RUN npm config set --global strict-ssl false
 RUN npm install
 COPY . .
