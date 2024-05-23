@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 FROM node:${NODE_VERSION}-${DEBIAN_VERSION} AS build
-ENV DOCKER_BUILD="true"
+ENV DOCKER_BUILD=true
 WORKDIR /app
 COPY --from=development /app .
 RUN npm run build

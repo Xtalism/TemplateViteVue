@@ -10,11 +10,7 @@ const zipFileName = `TemplateViteVue_${formattedDate}.zip`
 const buildDirectory = 'dist'
 
 // eslint-disable-next-line no-undef
-const dockerBuildEnv = process.env.DOCKER_BUILD
-const isDockerBuild =
-  typeof dockerBuildEnv === 'string'
-    ? dockerBuildEnv.toLowerCase() === 'true'
-    : false
+const isDockerBuild = process.env.DOCKER_BUILD?.toLowerCase() === 'true'
 
 // https://vitejs.dev/config/
 export default defineConfig({
