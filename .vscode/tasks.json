@@ -3,55 +3,17 @@
   "tasks": [
     {
       "label": "Run dev",
-      "type": "shell",
-      "command": "npm run devDebug",
+      "type": "npm",
+      "script": "devDebug",
       "isBackground": true,
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "dedicated",
-        "showReuseMessage": false,
-        "clear": true
-      },
-      "problemMatcher": [
-        {
-          "pattern": {
-            "regexp": "."
-          },
-          "background": {
-            "activeOnStart": true,
-            "beginsPattern": "> .*",
-            "endsPattern": "enter to show help"
-          }
-        }
-      ]
+      "problemMatcher": []
     },
     {
       "label": "Run prod",
-      "type": "shell",
-      "command": "npm run prodDebug",
+      "type": "npm",
+      "script": "prodDebug",
       "isBackground": true,
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "dedicated",
-        "showReuseMessage": false,
-        "clear": true
-      },
-      "problemMatcher": [
-        {
-          "pattern": {
-            "regexp": "."
-          },
-          "background": {
-            "activeOnStart": true,
-            "beginsPattern": "> .*",
-            "endsPattern": "enter to show help"
-          }
-        }
-      ]
+      "problemMatcher": []
     }
   ]
 }
